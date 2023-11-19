@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      margin: auto 0;
+      padding: 0;
+    }
+    header {
+      background-color: #994c00;
+    }
+
+    /* Container for background image */
+    .background-container {
+      background-image: url("images/world.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .background-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.2); /* Adjust the alpha value to control brightness */
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Add a custom style to set container width to 1000px */
+    .custom-container {
+      width: 1000px;
+      margin: 0 auto; /* Center the container */
+      padding: 20px; /* Add padding for better readability */
+    }
+  </style>
+  <title>ATLAS</title>
+  <link rel="stylesheet" href="appAtlas.css" />
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script defer type="module" src="js/appAtlas.js"></script>
+</head>
+<body>
+  <header class="container-fluid p-2">
+    <nav class="container">
+      <div class="row justify-content-around align-items-center">
+        <div class="col-auto logo p-0 text-white">
+          <h2 class="display-5 mb-0">Atlas</h2>
+        </div>
+        <div class="col-auto links p-0 d-flex text-white">
+          <a id="id_israel" class="nav-link active me-3" aria-current="page" href="#">Israel</a>
+          <a id="id_USA" class="nav-link active me-3" aria-current="page" href="#">USA</a>
+          <a id="id_France" class="nav-link active me-3" aria-current="page" href="#">France</a>
+          <a id="id_UK" class="nav-link active me-3" aria-current="page" href="#">United Kingdom</a>
+          <a id="id_thailand" class="nav-link active" aria-current="page" href="#">Thailand</a>
+        </div>
+        <div class="col-md-4 d-flex">
+          <input id="id_input" placeholder="Search country..." type="text" class="form-control" />
+          <button id="search_btn" class="btn btn-dark ms-2">Search</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="background-container">
+    <div class="container-fluid">
+      <main class="custom-container">
+        <div id="id_parent" class="container"></div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
